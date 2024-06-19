@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- favicon -->
+
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+
+    <!-- daisy UI and Tailwind link  -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- google font link   -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+        rel="stylesheet">
+
+    <!-- style  -->
+
+    <style>
+        .font-mulish {
+            font-family: "Mulish", sans-serif;
+        }
+    </style>
+
+    <title>milKWay Forum</title>
+</head>
+
+<body class="font-mulish">
+
+
+
+    <header class="container mx-auto m-14 p-3">
+        <nav>
+            <div class="navbar bg-base-100">
+                <div class="navbar-start">
+                    <a class="text-xl lg:text-6xl font-extrabold text-blue-950">milKWay</a>
+                </div>
+                <div class="navbar-end ">
+                    <div class="tooltip mr-3 h-7 flex items-center justify-center bg-[#12132D08] w-7 rounded-full border border-[#12132D99] "
+                        data-tip="Home">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                        </svg>
+                    </div>
+
+                    <div class="tooltip mr-3 h-7 flex items-center justify-center bg-[#12132D08] w-7 rounded-full border border-[#12132D99] "
+                        data-tip="Edit">
+                        <img class="p-1" src="images/pen.png" alt="">
+                    </div>
+
+                    <div class="tooltip mr-3 h-7 flex items-center justify-center bg-[#12132D08] w-7 rounded-full border border-[#12132D99] "
+                        data-tip="Add">
+                        <img class="p-1" src="images/add.png" alt="">
+                    </div>
+
+
+                    <div class="tooltip lg:mr-10 mr-3 h-7 flex items-center justify-center bg-[#12132D08] w-7 rounded-full border border-[#12132D99] "
+                        data-tip="Flag">
+                        <img class="p-1" src="images/flag.png" alt="">
+                    </div>
+                    <button class="btn bg-[#797DFC] rounded-full px-8 py-2">Sign in</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Banner section  -->
+
+        <section class="mt-14">
+
+
+
+
+
+            <div class=" bg-[#12132D] rounded-3xl min-h-screen"
+                style="background-image: url('images/bg-banner.png'); background-repeat: no-repeat; object-fit: cover; background-position: bottom; background-size: cover;">
+
+
+                <div class=" flex flex-col lg:flex-row lg:gap-64 gap-24 items-center">
+                    <div class="space-y-4 lg:pl-24 pl-12">
+                        <h1 class="font-extrabold lg:text-[64px] text-4xl text-white lg:pt-24 pt-16">Welcome to the <br>
+                            <br> <span style="background: linear-gradient(90deg, #797DFC 0.63%, rgba(151, 192, 245, 0.945) 41%);
+                            background-clip: text;
+                            -webkit-background-clip: text;
+                            -webkit-text-fill-color: transparent;">milKWay</span> Forum
+                        </h1>
+                        <p class="text-[#b9b3b3cc] pt-5">Share your favorite opinion and win and wp <br> forum coffee
+                            mug!</p>
+
+                        <label class="input input-bordered flex items-center gap-2">
+                            <input id="search-field" type="text" class="grow" placeholder="Search here anything" />
+                            <span onclick="handleSearch()" class="btn bg-[#797DFC] rounded-full px-8 py-4">Search</span>
+                        </label>
+
+
+
+                        <!-- spinner  -->
+                        <div id="loading-spinner" class="text-center  hidden">
+                            <span class="loading loading-infinity loading-lg text-white"></span>
+                        </div>
+
+
+                    </div>
+
+                    <div class="lg:mt-40 mt-10">
+                        <div class="overflow-x-auto bg-white p-12 rounded-3xl">
+                            <table class="table font-semibold">
+
+                                <tbody>
+                                    <!-- row 1 -->
+                                    <tr>
+
+                                        <td>Registered Users</td>
+                                        <td>01</td>
+                                    </tr>
+                                    <!-- row 2 -->
+                                    <tr>
+
+                                        <td>Forum</td>
+                                        <td>01</td>
+                                    </tr>
+                                    <!-- row 3 -->
+                                    <tr>
+
+                                        <td>Topics</td>
+                                        <td>01</td>
+                                    </tr>
+                                    <tr>
+
+                                        <td>Replies</td>
+                                        <td>01</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </div>
+        </section>
+
+    </header>
+
+
+    <main class="container mx-auto m-14 p-3">
+        <!-- Let’s Discuss section  -->
+        <section class=" lg:mt-24 mt-16">
+            <div class="text-center space-y-4">
+                <h1 class="font-extrabold text-4xl">Let’s Discuss</h1>
+                <p class="text-[#12132D99] text-xl font-medium">Yes, you can run unit tests and view the results
+                    directly within the app. The <br> integrated testing features allow for a streamlined
+                </p>
+            </div>
+
+
+            <div class="flex flex-col lg:flex-row gap-7">
+
+                <!-- card section  -->
+                <div id="discuss-card">
+
+                </div>
+
+                <!-- Title section  -->
+                <div class="p-6 mt-10 rounded-3xl bg-[#12132D0D]">
+                    <div class="flex gap-24 items-center">
+                        <h1 class="text-xl font-bold">Title</h1>
+                        <div class="flex gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none">
+                                <g clip-path="url(#clip0_30_2429)">
+                                    <path d="M7 12L12 17L22 7" stroke="#3DCE09" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M2 12L7 17M12 12L17 7" stroke="#3DCE09" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_30_2429">
+                                        <rect width="24" height="24" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                            <p>Mark as read ( <span id="read-count">0</span> )</p>
+                        </div>
+                    </div>
+
+                    <!-- Title card section  -->
+
+                    <div id="title-section">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Join Our Forum section  -->
+        <section class=" lg:mt-24 mt-16">
+
+            <div class="flex lg:justify-evenly bg-[#12132D] rounded-3xl min-h-screen ">
+
+                <div class="  space-y-12 flex flex-col justify-center">
+                    <div class="space-y-4 lg:pl-24 pl-12">
+                        <h1 class="font-extrabold lg:text-[64px] text-4xl text-white">Join Our Forum
+                        </h1>
+                        <p class="text-[#b9b3b3cc] pt-5">Share your favorite opinion and win and wp forum coffee mug!
+                            Yes, you can <br> run unit tests and view the results directly within the app. </p>
+
+                        <div>
+                            <button class="bg-[#797DFC] rounded-full py-5 px-10 text-white font-bold">Registered
+                                Now</button>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="lg:mt-16 mt-9">
+                    <img src="images/joinforum.png" alt="">
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Latest Posts section  -->
+        <section class=" lg:mt-24 mt-16">
+            <div class="text-center space-y-4">
+                <h1 class="font-extrabold text-4xl">Latest Posts</h1>
+                <p class="text-[#12132D99] text-xl font-medium">Share your favorite opinion and win and wp <br> forum coffee
+                    mug!
+                </p>
+            </div>
+
+
+
+
+            <!-- Latest Posts card  -->
+
+            <div id="latest-post-container" class="mt-12 grid grid-cols-1 lg:grid-cols-3 gap-5 ">
+
+               
+              </div>      
+        </section>
+    </main>
+
+
+    <footer class="footer footer-center p-10 bg-[#12132D0D] text-primary-content text-black">
+        <aside>
+            <h1 class="text-4xl font-extrabold">milKWay</h1>
+            <p class="font-bold text-gray-400">
+                Yes, you can run unit tests and view the results
+                directly within the app. The <br> integrated testing features allow for a streamlined
+            </p>
+
+        </aside>
+        <nav>
+            <div class="grid grid-flow-col gap-4 ">
+                <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        class="fill-current">
+                        <path
+                            d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z">
+                        </path>
+                    </svg></a>
+                <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        class="fill-current">
+                        <path
+                            d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z">
+                        </path>
+                    </svg></a>
+                <a><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        class="fill-current">
+                        <path
+                            d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z">
+                        </path>
+                    </svg></a>
+
+
+
+
+            </div>
+
+
+            <div class="border-t border-t-gray-400 border-dashed  pt-5 mt-5 ">
+                <p class="text-gray-500">Copyright © 2024 - All right reserved</p>
+            </div>
+        </nav>
+    </footer>
+
+
+    <script src="JS/script.js"></script>
+
+
+</body>
+
+</html>
